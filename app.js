@@ -15,7 +15,21 @@ $(function($){
    var fin = Number($('#finish-gram').val());
    if (!isNaN(sta) && !isNaN(fin) && sta > 0 && fin > 0) {
      var percent = (fin - sta) / sta;
-     $('#percentage-gram').val((percent * 100).toFixed(3));
+     percent = (percent * 100).toFixed(3);
+     $('#percentage-gram').val(percent);
+     $('#percentage-pound').val(percent);
+
+     // convert to pounds
+     var staOz = sta / 28.3495;
+     var finOz = fin / 28.3495;
+     var staLb = Math.floor(staOz / 16);
+     var finLb = Math.floor(finOz / 16);
+     staOz = (staOz - staLb * 16).toFixed(1);
+     finOz = (finOz - finLb * 16).toFixed(1);
+     $('#start-pound').val(staLb);
+     $('#start-ounce').val(staOz);
+     $('#finish-pound').val(finLb);
+     $('#finish-ounce').val(finOz);
    }
   };
   $('#start-gram').change(gramChanged);
@@ -32,7 +46,15 @@ $(function($){
 
    if (!isNaN(sta) && !isNaN(fin) && sta > 0 && fin > 0) {
      var percent = (fin - sta) / sta;
-     $('#percentage-pound').val((percent * 100).toFixed(3));
+     percent = (percent * 100).toFixed(3);
+     $('#percentage-gram').val(percent);
+     $('#percentage-pound').val(percent);
+
+     // convert to grams
+     var staGram = sta * 28.3495;
+     var finGram = fin * 28.3495;
+     $('#start-gram').val(staGram);
+     $('#finish-gram').val(finGram);
    }
   };
   $('#start-pound').change(poundChanged);
