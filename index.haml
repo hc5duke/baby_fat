@@ -1,0 +1,58 @@
+!!!
+
+%html
+  %head
+    %title Baby Weight Calc
+    %link{href: './apple-touch-icon-114x114.png', rel:"apple-touch-icon", sizes:"114x114"}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=0"}
+    %script{src: "./jquery.js", type:"text/javascript"}
+    %script{src: "./app.js", type:"text/javascript"}
+    %style
+      :plain
+        body {
+          font-family: arial;
+        }
+        #pounds {
+          display: none;
+        }
+
+  %body
+    %h1 Baby weight
+
+    %table#grams
+      %tr
+        %td
+          %label birth weight
+        %td
+          %input{type: 'number', id: 'start-gram', placeholder: 'grams', pattern: '\d*'}g
+      %tr
+        %td
+          %label current weight
+        %td
+          %input{type: 'number', id: 'finish-gram', placeholder: 'grams', pattern: '\d*'}g
+      %tr
+        %td
+          %label % change
+        %td
+          %input{type: 'number', id: 'percentage-gram', placeholder: 'percentage change'}%
+
+    %table#pounds
+      %tr
+        %td
+          %label birth weight
+        %td
+          %input{type: 'number', id: 'start-pound', placeholder: 'pounds', pattern: '\d*'}lb
+          %input{type: 'number', id: 'start-ounce', placeholder: 'ounces', pattern: '\d*'}oz
+      %tr
+        %td
+          %label current weight
+        %td
+          %input{type: 'number', id: 'finish-pound', placeholder: 'pounds', pattern: '\d*'}lb
+          %input{type: 'number', id: 'finish-ounce', placeholder: 'ounces', pattern: '\d*'}oz
+      %tr
+        %td
+          %label % change
+        %td
+          %input{type: 'number', id: 'percentage-pound', placeholder: 'percentage change'}%
+
+    %a{href: '#', id: 'togglePound'} Toggle grams / pounds
