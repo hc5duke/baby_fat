@@ -17,7 +17,9 @@
         }
 
   %body
-    %h1 Baby weight
+    %h1
+      Baby weight
+      %a{href: '#', id: 'togglePound'} g/lb
 
     %table#grams
       %tr
@@ -54,5 +56,3 @@
           %label % change
         %td
           %input{type: 'number', id: 'percentage-pound', placeholder: 'percentage change'}%
-
-    %a{href: '#', id: 'togglePound'} Toggle grams / pounds
