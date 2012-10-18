@@ -29,11 +29,14 @@ $(function($){
 
    var sta = staLb * 16 + staOz;
    var fin = finLb * 16 + finOz;
+
    if (!isNaN(sta) && !isNaN(fin) && sta > 0 && fin > 0) {
      var percent = (fin - sta) / sta;
      $('#percentage-pound').val((percent * 100).toFixed(3));
    }
   };
   $('#start-pound').change(poundChanged);
+  $('#start-ounce').change(poundChanged);
   $('#finish-pound').change(poundChanged);
+  $('#finish-ounce').change(poundChanged);
 });
