@@ -53,8 +53,8 @@ $(function($){
      // convert to grams
      var staGram = sta * 28.3495;
      var finGram = fin * 28.3495;
-     $('#start-gram').val(staGram);
-     $('#finish-gram').val(finGram);
+     $('#start-gram').val(staGram.toFixed(1));
+     $('#finish-gram').val(finGram.toFixed(1));
    }
   };
   $('#start-pound').change(poundChanged);
